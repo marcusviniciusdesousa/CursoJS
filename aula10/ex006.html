@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background-color: rgb(102, 94, 94);
+        }
+        div#area {
+            font: normal 20pt Arial;
+            background: Red;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id= "area"> <!--</div> onclick= "clicar ()" onmouseenter="Entrou()" onmouseout="Saiu()" onmousemove="Movendo()"-->
+        <strong>Interaja...</strong>
+    </div> 
+    <script>
+        var a1 = window.document.getElementById('area')
+        a1.addEventListener('click', clicar)
+        a1.addEventListener('mouseenter', Entrou)
+        a1.addEventListener('mouseout', Saiu) 
+        function clicar() {
+            var a = window.document.getElementById("area")
+            a.innerHTML = "Sucesso!"
+            a.style.background = 'green'
+        }
+        function Entrou() {
+            var a = window.document.getElementById("area")
+            a.innerHTML = "Aguardando..."
+            a.style.background = 'Yellow'
+        }
+        function Saiu() {
+            var a = window.document.getElementById("area")
+            a.innerHTML = "Saiu"
+            a.style.background = 'Red'
+        }
+        function Movendo() {
+            // a == "Sucesso!"? a.innerText "Sucesso!":a.innerText = "Clique" 
+        }
+    </script>
+</body>
+</html>
